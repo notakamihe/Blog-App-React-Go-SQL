@@ -49,6 +49,12 @@ func main() {
 		panic(err.Error())
 	}
 
+	// check the connection
+	err = db.Ping()
+	if err != nil {
+		panic(err.Error())
+	}
+
 	defer db.Close()
 
 	fmt.Println("Successfully connected to MySQL database")
